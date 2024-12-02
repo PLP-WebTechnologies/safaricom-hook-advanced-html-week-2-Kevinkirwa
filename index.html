@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multimedia Webpage and Registration Form</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;    
+            padding: 0;
+            background: linear-gradient(to bottom, #f0f4ff, #d9e4ff);
+            color: #333;
+        }
+
+        h2, h3 {
+            color: #0056b3;
+        }
+
+        section {
+            margin: 20px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .multimedia {
+            flex: 1;
+            min-width: 400px;
+            text-align: center;
+        }
+
+        .form-container {
+            flex: 1;
+            min-width: 400px;
+        }
+
+        /* Form Styling */
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        label {
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        input,
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        input[type="radio"],
+        input[type="checkbox"] {
+            width: auto;
+            margin-right: 10px;
+        }
+
+        button {
+            background-color: #0056b3;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #003d80;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Multimedia Section -->
+        <section class="multimedia">
+            <h2>Enjoy Our Multimedia Content</h2>
+
+            <!-- Audio Section -->
+            <div class="audio">
+                <h3>Audio Player</h3>
+                <audio controls>
+                    <source src="music.mp3" type="audio/mpeg">
+                    <source src="audio-file.ogg" type="audio/ogg">
+                    Your browser does not support the audio element.
+                </audio>
+            </div>
+
+            <!-- Video Section -->
+            <div class="video" style="margin-top: 20px;">
+                <h3>Video Player</h3>
+                <video controls poster="poster-image.jpg" width="100%">
+                    <source src="videoplayback.mp4" type="video/mp4">
+                    <source src="video-file.webm" type="video/webm">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+        <!-- Registration Form Section -->
+        <section class="form-container">
+            <h2>Register Now</h2>
+            <form action="submit-registration.php" method="POST">
+                <!-- Full Name -->
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required maxlength="100">
+
+                <!-- Email Address -->
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <!-- Password -->
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" placeholder="Create a password" required minlength="8">
+
+                <!-- Age -->
+                <label for="age">Age</label>
+                <input type="number" id="age" name="age" placeholder="Enter your age" required min="18">
+
+                <!-- Gender -->
+                <label>Gender</label>
+                <input type="radio" id="male" name="gender" value="Male" required>
+                <label for="male" style="display: inline;">Male</label>
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female" style="display: inline;">Female</label>
+                <input type="radio" id="other" name="gender" value="Other">
+                <label for="other" style="display: inline;">Other</label>
+
+                <!-- Terms and Conditions -->
+                <input type="checkbox" id="terms" name="terms" required>
+                <label for="terms" style="display: inline;">I agree to the terms and conditions</label>
+
+                <!-- Submit Button -->
+                <button type="submit">Register</button>
+            </form>
+        </section>
+    </div>
+</body>
+
+</html>
